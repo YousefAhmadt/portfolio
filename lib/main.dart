@@ -198,7 +198,9 @@ class HeroSection extends StatelessWidget {
                 Image.asset(
                   'assets/me.png',
                   height: 220,
-                  errorBuilder: (context, error, stackTrace) => const Icon(Icons.person, size: 100, color: Colors.white24),
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(Icons.person, size: 100, color: Colors.white24);
+                  },
                 ),
               ],
             ),
@@ -355,8 +357,8 @@ class LinesPainter extends CustomPainter {
     for (var i = 0; i < 8; i++) {
       var path = Path();
       path.moveTo(center.dx, center.dy);
-      path.lineTo(center.dx + 150 * (i == 0 || i == 4 ? 0 : (i < 4 ? 1 : -1)), 
-                  center.dy + 150 * (i == 2 || i == 6 ? 0 : (i > 0 && i < 4 ? -1 : 1)));
+      path.lineTo(center.dx + 150 * (i == 0 || i == 4 ? 0 : (i < 4 ? 1 : -1)),
+          center.dy + 150 * (i == 2 || i == 6 ? 0 : (i > 0 && i < 4 ? -1 : 1)));
       canvas.drawPath(path, paint);
     }
   }
@@ -365,6 +367,7 @@ class LinesPainter extends CustomPainter {
 
 class WorkExperienceSection extends StatelessWidget {
   const WorkExperienceSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -423,6 +426,7 @@ class WorkExperienceSection extends StatelessWidget {
 
 class FeaturedProjectsSection extends StatelessWidget {
   const FeaturedProjectsSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
